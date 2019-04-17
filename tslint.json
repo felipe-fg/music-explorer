@@ -1,0 +1,6 @@
+{
+    "extends": ["tslint:recommended"],
+    "rules": {
+        "object-literal-key-quotes": false
+    }
+}

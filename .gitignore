@@ -1,0 +1,7 @@
+node_modules
+yarn-error.log
+.env*.local
+build
+.firebase
+.firebaserc
+firebase.json
