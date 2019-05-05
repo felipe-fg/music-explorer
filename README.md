@@ -6,7 +6,7 @@ This experience uses Spotify to show your favorite artists and find similar arti
 
 ## How It Works
 
-This project depends on the oficial [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to read information about you and other artists.
+This project depends on the official [Spotify Web API](https://developer.spotify.com/documentation/web-api/) to read information about you and other artists.
 
 Once connected to your account, it will read your favorite artists (based on top artists API).
 
