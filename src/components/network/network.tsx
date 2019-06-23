@@ -1,20 +1,20 @@
 import cytoscape from "cytoscape";
 import React, { useEffect, useRef } from "react";
 
-const cxtmenu = require("cytoscape-cxtmenu"); // tslint:disable-line:no-var-requires
-const euler = require("cytoscape-euler"); // tslint:disable-line:no-var-requires
-
 import { IArtist } from "../../model/artist";
 import { IArtistEdge } from "../../model/artist-edge";
 import { IArtistNetwork } from "../../model/artist-network";
 import theme from "./theme";
+
+cytoscape.use(require("cytoscape-cxtmenu")); // tslint:disable-line:no-var-requires
+cytoscape.use(require("cytoscape-euler")); // tslint:disable-line:no-var-requires
 
 const Network = ({ network, onView, onPlay }: INetworkProps) => {
     const cyEl = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         createNetwork(cyEl.current, { network, onView, onPlay });
-    }, [network]);
+    }, [network, onView, onPlay]);
 
     return <div className="is-overlay" ref={cyEl} />;
 };
@@ -27,9 +27,6 @@ function createNetwork<T extends HTMLElement>(container: T | null, { network, on
     const nodes = network.artists.map(createNode);
     const edges = network.edges.map(createEdge);
     const elements = [...nodes, ...edges];
-
-    cytoscape.use(cxtmenu);
-    cytoscape.use(euler);
 
     const cy = cytoscape({
         container,

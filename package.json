@@ -1,26 +1,26 @@
 {
     "name": "music-explorer",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "private": true,
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.8.1",
-        "@types/cytoscape": "^3.4.1",
-        "@types/jest": "24.0.11",
-        "@types/node": "11.13.4",
-        "@types/react": "16.8.13",
+        "@types/cytoscape": "^3.4.3",
+        "@types/jest": "24.0.15",
+        "@types/node": "12.0.10",
+        "@types/react": "16.8.22",
         "@types/react-dom": "16.8.4",
-        "@types/react-router-dom": "^4.3.2",
-        "axios": "^0.18.0",
-        "bulma": "^0.7.4",
-        "cytoscape": "3.5.2",
+        "@types/react-router-dom": "^4.3.4",
+        "@fortawesome/fontawesome-free": "^5.9.0",
+        "axios": "^0.19.0",
+        "bulma": "0.7.4",
+        "cytoscape": "3.7.2",
         "cytoscape-cxtmenu": "^3.1.0",
         "cytoscape-euler": "^1.2.1",
-        "node-sass": "^4.11.0",
+        "node-sass": "^4.12.0",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "react-router-dom": "^5.0.0",
-        "react-scripts": "2.1.8",
-        "typescript": "3.4.3"
+        "react-router-dom": "^5.0.1",
+        "react-scripts": "3.0.1",
+        "typescript": "3.5.2"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -31,10 +31,16 @@
     "eslintConfig": {
         "extends": "react-app"
     },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
-    ]
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

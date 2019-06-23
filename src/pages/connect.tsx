@@ -6,9 +6,9 @@ import { SpotifyAuthorizeService } from "../services/spotify/spotify-authorize-s
 
 import { AuthContext } from "../components/auth/auth-provider";
 
-const Connect = ({ history }: RouteComponentProps) => {
-    const authorizeService = new SpotifyAuthorizeService();
+const authorizeService = new SpotifyAuthorizeService();
 
+const Connect = ({ history }: RouteComponentProps) => {
     const context = useContext(AuthContext);
 
     const [message, setMessage] = useState();
@@ -28,7 +28,7 @@ const Connect = ({ history }: RouteComponentProps) => {
             setMessage("Error");
             setError(e.message);
         }
-    }, []);
+    }, [history, context]);
 
     return (
         <section className="hero is-fullheight is-info is-bold">

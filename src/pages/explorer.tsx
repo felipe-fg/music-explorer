@@ -14,14 +14,14 @@ import { AuthContext } from "../components/auth/auth-provider";
 import Guide from "../components/guide/guide";
 import Network from "../components/network/network";
 
-const Explorer = ({ history }: RouteComponentProps) => {
-    const artistService = new SpotifyArtistService();
-    const playerService = new SpotifyPlayerService();
-    const artistNetworkService = new ArtistNetworkService(artistService);
+const artistService = new SpotifyArtistService();
+const playerService = new SpotifyPlayerService();
+const artistNetworkService = new ArtistNetworkService(artistService);
 
+const Explorer = ({ history }: RouteComponentProps) => {
     const context = useContext(AuthContext);
 
-    const [token, setToken] = useState<IAPIToken | undefined>(context.token);
+    const [token] = useState<IAPIToken | undefined>(context.token);
     const [state, setState] = useState<"load" | "loaded" | "ready">("load");
     const [network, setNetwork] = useState<IArtistNetwork>();
 
@@ -30,7 +30,7 @@ const Explorer = ({ history }: RouteComponentProps) => {
             history.push("/");
             return;
         }
-    }, [token]);
+    }, [history, token]);
 
     useEffect(() => {
         if (token == null) {
@@ -53,7 +53,7 @@ const Explorer = ({ history }: RouteComponentProps) => {
         };
 
         fetch();
-    }, []);
+    }, [token]);
 
     const onCloseGuide = (): void => {
         setState("ready");
